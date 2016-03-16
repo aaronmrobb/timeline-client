@@ -1,0 +1,66 @@
+{
+  "name": "timeline-client",
+  "version": "1.0.0",
+  "description": "Displaying timelines with d3 and react Stretch goal: mapping",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
+      "start": "webpack-dev-server",
+      "test": "mocha --compilers js:babel-core/register --require ./test/test-helper.js 'test/**/*.@(js|jsx)'"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronmrobb/timeline-client.git"
+  },
+  "babel": {
+  "presets": [
+    "es2015",
+    "react"
+  ]
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronmrobb/timeline-client/issues"
+  },
+  "homepage": "https://github.com/aaronmrobb/timeline-client#readme",
+  "devDependencies": {
+  "babel-core": "^6.4.5",
+  "babel-loader": "^6.2.2",
+  "babel-preset-es2015": "^6.3.13",
+  "babel-preset-react": "^6.3.13",
+  "chai": "^3.5.0",
+  "chai-enzyme": "^0.4.0",
+  "chai-immutable": "^1.5.3",
+  "classnames": "^2.2.3",
+  "css-loader": "^0.23.1",
+  "envify": "^1.2.1",
+  "enzyme": "^1.5.0",
+  "jsdom": "^8.0.2",
+  "mocha": "^2.4.5",
+  "node-sass": "^3.4.2",
+  "react-addons-test-utils": "^0.14.7",
+  "react-hot-loader": "^1.3.0",
+  "sass-loader": "^3.1.2",
+  "sinon": "^1.17.3",
+  "style-loader": "^0.13.0",
+  "webpack": "^1.12.13",
+  "webpack-dev-server": "^1.14.1"
+},
+"dependencies": {
+  "classnames": "^2.2.3",
+  "envify-loader": "^0.1.0",
+  "history": "^2.0.0",
+  "immutable": "^3.7.6",
+  "pure-render-decorator": "^0.2.0",
+  "random-words": "0.0.1",
+  "react": "^0.14.7",
+  "react-addons-pure-render-mixin": "^0.14.7",
+  "react-dom": "^0.14.7",
+  "react-mixin": "^2.0.2",
+  "react-redux": "^4.4.0",
+  "react-router": "^2.0.0",
+  "redux": "^3.3.0"
+}
+}
