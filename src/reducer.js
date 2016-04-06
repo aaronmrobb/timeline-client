@@ -7,7 +7,15 @@ const initialState = fromJS({
 
 export default function(state = initialState, action) {
   switch(action.type) {
-    case 'DO_SOMETHING':
+    case 'USER_LOGIN':
+      return state
+    case 'USER LOGOUT':
+      return state
+    case 'CREATE_PROJECT':
+      return state
+    case 'UPDATE_PROJECT':
+      return state
+    case 'DELETE_PROEJCT':
       return state
   }
 }
