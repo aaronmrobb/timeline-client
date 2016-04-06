@@ -9,3 +9,21 @@ export function userLogout() {
     type: 'USER_LOGOUT'
   }
 }
+
+export function createProject() {
+  return {
+    type: 'CREATE_PROJECT'
+  }
+}
+
+export function updateProject() {
+  return {
+    type: 'UPDATE_PROJECT'
+  }
+}
+
+export function deleteProject() {
+  reutrn {
+    type: 'DELETE_PROJECT'
+  }
+}
