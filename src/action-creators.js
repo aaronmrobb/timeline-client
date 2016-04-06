@@ -23,7 +23,7 @@ export function updateProject() {
 }
 
 export function deleteProject() {
-  reutrn {
+  return {
     type: 'DELETE_PROJECT'
   }
 }
