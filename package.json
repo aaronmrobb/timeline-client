@@ -12,12 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/aaronmrobb/timeline-client.git"
   },
-  "babel": {
-  "presets": [
-    "es2015",
-    "react"
-  ]
-},
   "keywords": [],
   "author": "",
   "license": "ISC",
