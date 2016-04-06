@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
-      "start": "webpack-dev-server",
+      "start": "webpack-dev-server --hot",
       "test": "mocha --compilers js:babel-core/register --require ./test/test-helper.js 'test/**/*.@(js|jsx)'"
     },
   "repository": {
