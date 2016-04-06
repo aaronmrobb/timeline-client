@@ -10,7 +10,19 @@ class Projects extends Component {
   }
   render() {
     return (
-      <div>Projects</div>
+      <div className="container">
+        <div className="row">
+          <h1>Projects</h1>
+        </div>
+        <div className="row">
+          <div className="col-md-9">
+            Project area
+          </div>
+          <div className="col-md-3">
+            Side Bar
+          </div>
+        </div>
+      </div>
     )
   }
 }

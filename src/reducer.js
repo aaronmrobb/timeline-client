@@ -1,7 +1,8 @@
 import { List, Map, fromJS, toJS } from 'immutable'
 
 const initialState = fromJS({
-  user: undefined
+  user: undefined,
+  projects: []
 })
 
 export default function(state = initialState, action) {

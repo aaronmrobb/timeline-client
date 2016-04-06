@@ -1,5 +1,11 @@
-export function doSomething() {
+export function userLogin() {
   return {
-    type: 'DO_SOMETHING'
+    type: 'USER_LOGIN'
+  }
+}
+
+export function userLogout() {
+  return {
+    type: 'USER_LOGOUT'
   }
 }

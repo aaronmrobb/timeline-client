@@ -5,7 +5,7 @@ import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 're
 import { Provider } from 'react-redux'
 import reducer from './reducer.js'
 import { NavContainer } from './components/Nav.jsx'
-import { AccountContianer } from './components/Account.jsx'
+import { AccountContainer } from './components/Account.jsx'
 import { HomeContainer } from './components/Home.jsx'
 import { ProjectsContainer } from './components/Projects.jsx'
 
@@ -16,15 +16,13 @@ const store = createStore(reducer)
 
 ReactDOM.render(
   <Provider store={store}>
-      <div className="client">
+      <div className="app-wrapper">
         <NavContainer />
         <div className="main">
           <Router history={hashHistory}>
-            <Route path="/" component={HomeContainer}>
-              <NavContainer />
-              <Route path="/account" component={AccountContianer} />
-              <Route path="/projects" component={ProjectsContainer} />
-            </Route>
+            <Route path="/" component={HomeContainer}/>
+            <Route path="/account" component={AccountContainer} />
+            <Route path="/projects" component={ProjectsContainer} />
           </Router>
         </div>
     </div>
