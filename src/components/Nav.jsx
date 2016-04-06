@@ -4,6 +4,8 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
 import * as actionCreators from '../action-creators'
 
+//Navigation Outside of Router
+
 class Nav extends Component {
   constructor(props) {
     super(props)
