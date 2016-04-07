@@ -3,7 +3,7 @@ import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
 import * as actionCreators from '../action-creators'
-import { Signin } from './Signin.jsx'
+import { Login } from './Login.jsx'
 
 //Navigation Outside of Router
 
@@ -32,7 +32,7 @@ class Nav extends Component {
 
                  </ul>
               </div>
-              <Signin/>
+              <Login/>
           </div>
       </nav>
     )

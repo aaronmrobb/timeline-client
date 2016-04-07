@@ -5,7 +5,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 //Sign In shit toggle
 
-export class Signin extends Component {
+export class Login extends Component {
   constructor(props) {
     super(props)
   }
@@ -25,4 +25,4 @@ export class Signin extends Component {
   }
 }
 
-reactMixin(Signin.prototype, PureRenderMixin)
+reactMixin(Login.prototype, PureRenderMixin)

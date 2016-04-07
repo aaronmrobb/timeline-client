@@ -27,3 +27,7 @@ export function deleteProject() {
     type: 'DELETE_PROJECT'
   }
 }
+
+export function toggleLogin() {
+  
+}
