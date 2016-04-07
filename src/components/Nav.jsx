@@ -32,7 +32,7 @@ class Nav extends Component {
 
                  </ul>
               </div>
-              <Login/>
+              <Login loginState={this.props.loginForm} toggleLogin={this.props.toggleLogin}/>
           </div>
       </nav>
     )
@@ -43,6 +43,7 @@ reactMixin(Nav.prototype, PureRenderMixin)
 
 function mapStateToProps(state) {
   return {
+    loginForm: state.get('loginForm')
   }
 }
 

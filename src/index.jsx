@@ -15,7 +15,6 @@ require('../styles/main.scss')
 
 const store = createStore(reducer)
 
-
 ReactDOM.render(
   <Provider store={store}>
       <div className="app-wrapper">

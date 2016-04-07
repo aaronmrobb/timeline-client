@@ -1,8 +1,10 @@
 import { List, Map, fromJS, toJS } from 'immutable'
+import { toggleLogin } from './reducers/navigation'
 
-const initialState = fromJS({
+const initialState = Map({
   user: undefined,
-  projects: []
+  projects: undefined,
+  loginForm: false
 })
 
 export default function(state = initialState, action) {
@@ -18,6 +20,7 @@ export default function(state = initialState, action) {
     case 'DELETE_PROEJCT':
       return state
     case 'TOGGLE_LOGIN':
-      return state
+      return toggleLogin(state)
   }
+  return state
 }
