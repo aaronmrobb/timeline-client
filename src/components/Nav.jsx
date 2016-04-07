@@ -12,6 +12,10 @@ class Nav extends Component {
     super(props)
   }
   render() {
+    const { user } = this.props
+    const links = user ? [  <li><a href="/#/explore">Explore</a></li>,
+      <li><a href="/#/account">Account</a></li>,
+      <li><a href="/#/projects">Projects</a></li>] : <li><a href="/#/explore">Explore</a></li>
     return (
       <nav className="navbar navbar-inverse">
         <div className="container">
@@ -27,11 +31,10 @@ class Nav extends Component {
               </div>
               <div className="navbar-collapse navbar-left collapse">
                 <ul className="nav navbar-nav">
-                  <li><a href="/#/account">Account</a></li>
-                  <li><a href="/#/projects">Projects</a></li>
+                  { links }
                  </ul>
               </div>
-              <Login loginState={this.props.loginForm} toggleLogin={this.props.toggleLogin}/>
+              <Login loginState={this.props.loginForm} toggleLogin={this.props.toggleLogin} userLogin={this.props.userLogin}/>
           </div>
       </nav>
     )
@@ -42,6 +45,7 @@ reactMixin(Nav.prototype, PureRenderMixin)
 
 function mapStateToProps(state) {
   return {
+    user: state.get('user'),
     loginForm: state.get('loginForm')
   }
 }
