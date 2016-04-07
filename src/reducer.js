@@ -2,9 +2,11 @@ import { List, Map, fromJS, toJS } from 'immutable'
 import { toggleLogin } from './reducers/navigation'
 
 const initialState = Map({
-  user: undefined,
+  auth: undefined,
   projects: undefined,
-  loginForm: false
+  navigation: Map({
+    loginForms: false
+  })
 })
 
 export default function(state = initialState, action) {

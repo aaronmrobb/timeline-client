@@ -34,7 +34,9 @@ class Nav extends Component {
                   { links }
                  </ul>
               </div>
-              <Login loginState={this.props.loginForm} toggleLogin={this.props.toggleLogin} userLogin={this.props.userLogin}/>
+              <Login loginState={this.props.loginForm}
+                     toggleLogin={this.props.toggleLogin}
+                     userLogin={this.props.userLogin}/>
           </div>
       </nav>
     )
@@ -46,7 +48,7 @@ reactMixin(Nav.prototype, PureRenderMixin)
 function mapStateToProps(state) {
   return {
     user: state.get('user'),
-    loginForm: state.get('loginForm')
+    loginForm: state.getIn(['navigation', 'loginForm'])
   }
 }
 

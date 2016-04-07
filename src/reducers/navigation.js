@@ -1,3 +1,3 @@
 export function toggleLogin(state) {
-  return state.set('loginForm', !state.get('loginForm'))
+  return state.setIn(['navigation', 'loginForm'], !state.getIn(['navigation', 'loginForm']))
 }
