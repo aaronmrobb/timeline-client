@@ -29,7 +29,6 @@ class Nav extends Component {
                 <ul className="nav navbar-nav">
                   <li><a href="/#/account">Account</a></li>
                   <li><a href="/#/projects">Projects</a></li>
-
                  </ul>
               </div>
               <Login loginState={this.props.loginForm} toggleLogin={this.props.toggleLogin}/>
