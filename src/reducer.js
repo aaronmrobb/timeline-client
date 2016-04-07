@@ -17,5 +17,7 @@ export default function(state = initialState, action) {
       return state
     case 'DELETE_PROEJCT':
       return state
+    case 'TOGGLE_LOGIN':
+      return state
   }
 }

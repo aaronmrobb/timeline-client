@@ -8,6 +8,8 @@ import { NavContainer } from './components/Nav.jsx'
 import { AccountContainer } from './components/Account.jsx'
 import { HomeContainer } from './components/Home.jsx'
 import { ProjectsContainer } from './components/Projects.jsx'
+import { SignupContainer } from './components/Signup.jsx'
+
 
 require('../styles/main.scss')
 
@@ -23,6 +25,7 @@ ReactDOM.render(
             <Route path="/" component={HomeContainer}/>
             <Route path="/account" component={AccountContainer} />
             <Route path="/projects" component={ProjectsContainer} />
+            <Route path="/signup" component={SignupContainer}/>
           </Router>
         </div>
     </div>

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
-
+import { connect } from 'react-redux'
+import * as actionCreators from '../action-creators'
 
 //Landing Page Junk Stuff
 
-class Signup extends Component {
+export class Signup extends Component {
   constructor(props) {
     super(props)
   }
@@ -23,3 +24,9 @@ class Signup extends Component {
 }
 
 reactMixin(Signup.prototype, PureRenderMixin)
+function mapStateToProps(state) {
+  return {
+  }
+}
+
+export const SignupContainer = connect(mapStateToProps, actionCreators)(Signup)

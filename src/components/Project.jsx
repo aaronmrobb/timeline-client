@@ -5,7 +5,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 
 //Landing Page Junk Stuff
 
-class Project extends Component {
+export class Project extends Component {
   constructor(props) {
     super(props)
   }
