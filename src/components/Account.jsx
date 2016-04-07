@@ -12,7 +12,13 @@ class Account extends Component {
   }
   render() {
     return (
-      <div>Account</div>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <h1>Some Account Info</h1>
+          </div>
+        </div>
+      </div>
     )
   }
 }

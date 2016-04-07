@@ -3,6 +3,7 @@ import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
 import * as actionCreators from '../action-creators'
+import { Signin } from './Signin.jsx'
 
 //Navigation Outside of Router
 
@@ -12,7 +13,28 @@ class Nav extends Component {
   }
   render() {
     return (
-      <div>Nav</div>
+      <nav className="navbar navbar-inverse">
+        <div className="container">
+          <div className="navbar-header">
+
+                <button type="button" className="navbar-toggle">
+                  <span className="sr-only">Toggle navigation</span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>
+                <a className="navbar-brand" href="#">Timelines</a>
+              </div>
+              <div className="navbar-collapse navbar-left collapse">
+                <ul className="nav navbar-nav">
+                  <li><a href="/#/account">Account</a></li>
+                  <li><a href="/#/projects">Projects</a></li>
+
+                 </ul>
+              </div>
+              <Signin/>
+          </div>
+      </nav>
     )
   }
 }

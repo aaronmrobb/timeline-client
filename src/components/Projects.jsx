@@ -14,7 +14,9 @@ class Projects extends Component {
     return (
       <div className="container">
         <div className="row">
-          <h1>Projects</h1>
+          <div className="col-md-12">
+            <h1>Projects</h1>
+          </div>
         </div>
         <div className="row">
           <div className="col-md-9">
