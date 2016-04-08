@@ -1,6 +1,10 @@
-export function userLogin() {
+export function userLogin(username, password) {
   return {
-    type: 'USER_LOGIN'
+    type: 'USER_LOGIN',
+    data: {
+      username: username,
+      password: password
+    }
   }
 }
 
@@ -31,5 +35,11 @@ export function deleteProject() {
 export function toggleLogin() {
   return {
     type: 'TOGGLE_LOGIN'
+  }
+}
+
+export function toggleMenu() {
+  return {
+    type: 'TOGGLE_MENU'
   }
 }

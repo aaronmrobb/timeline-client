@@ -4,6 +4,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
 import * as actionCreators from '../action-creators'
 import { Login } from './Login.jsx'
+import classnames from 'classnames'
 
 //Navigation Outside of Router
 
@@ -11,8 +12,13 @@ class Nav extends Component {
   constructor(props) {
     super(props)
   }
+  menuClick(e) {
+   e.preventDefault()
+   this.props.toggleMenu()
+  }
   render() {
-    const { user } = this.props
+    const { user, menuCollapse } = this.props
+    console.log(menuCollapse)
     const links = user ? [  <li><a href="/#/explore">Explore</a></li>,
       <li><a href="/#/account">Account</a></li>,
       <li><a href="/#/projects">Projects</a></li>] : <li><a href="/#/explore">Explore</a></li>
@@ -21,7 +27,7 @@ class Nav extends Component {
         <div className="container">
           <div className="navbar-header">
 
-                <button type="button" className="navbar-toggle">
+                <button type="button" className="navbar-toggle" onClick={this.menuClick.bind(this)}>
                   <span className="sr-only">Toggle navigation</span>
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
@@ -48,6 +54,7 @@ reactMixin(Nav.prototype, PureRenderMixin)
 function mapStateToProps(state) {
   return {
     user: state.get('user'),
+    menuCollapse: state.getIn(['navigation', 'menuCollapse']),
     loginForm: state.getIn(['navigation', 'loginForm'])
   }
 }

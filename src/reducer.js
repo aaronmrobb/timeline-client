@@ -1,11 +1,12 @@
 import { List, Map, fromJS, toJS } from 'immutable'
-import { toggleLogin } from './reducers/navigation'
+import { toggleLogin, toggleMenu } from './reducers/navigation'
 
 const initialState = Map({
   auth: undefined,
   projects: undefined,
   navigation: Map({
-    loginForms: false
+    loginForms: false,
+    menuCollapse: true
   })
 })
 
@@ -23,6 +24,8 @@ export default function(state = initialState, action) {
       return state
     case 'TOGGLE_LOGIN':
       return toggleLogin(state)
+    case 'TOGGLE_MENU':
+      return toggleMenu(state)
   }
   return state
 }
