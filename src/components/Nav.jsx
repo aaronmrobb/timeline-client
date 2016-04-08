@@ -19,9 +19,11 @@ class Nav extends Component {
   render() {
     const { user, menuCollapse } = this.props
     console.log(menuCollapse)
-    const links = user ? [  <li><a href="/#/explore">Explore</a></li>,
-      <li><a href="/#/account">Account</a></li>,
-      <li><a href="/#/projects">Projects</a></li>] : <li><a href="/#/explore">Explore</a></li>
+    const loggedIn =   [<li><a href="/#/explore">Explore</a></li>,
+        <li><a href="/#/account">Account</a></li>,
+        <li><a href="/#/projects">Projects</a></li>]
+    const notLoggedIn = <li><a href="/#/explore">Explore</a></li>
+    const links = user ? loggedIn : notLoggedIn
     return (
       <nav className="navbar navbar-inverse">
         <div className="container">
