@@ -21,19 +21,19 @@ export class Login extends Component {
     return (
       <div className="nav nav-pills pull-right">
         <button className="btn btn-default navbar-btn" onClick={this.handleClick.bind(this)}>Login</button>
-          <div className={dropDownClasses}>
-               <form className="form" id="formLogin" onSubmit={this.handleSubmit.bind(this)}>
-                 <div className="form-group">
-                   <input ref="username" className="form-control" name="username" id="username" type="text" placeholder="Username"/>
-                 </div>
-                 <div className="form-group">
-                   <input  ref="password" className="form-control" name="password" id="password" type="password" placeholder="Password"/>
-                 </div>
-                 <div className="form-group">
-                   <button type="submit" id="btnLogin" className="btn btn-default">Login</button>
-                 </div>
-               </form>
-             </div>
+        <div className={dropDownClasses}>
+         <form className="form" id="formLogin" onSubmit={this.handleSubmit.bind(this)}>
+           <div className="form-group">
+             <input ref="username" className="form-control" name="username" id="username" type="text" placeholder="Username"/>
+           </div>
+           <div className="form-group">
+             <input  ref="password" className="form-control" name="password" id="password" type="password" placeholder="Password"/>
+           </div>
+           <div className="form-group">
+             <button type="submit" id="btnLogin" className="btn btn-default">Login</button>
+           </div>
+         </form>
+        </div>
       </div>
     )
   }
