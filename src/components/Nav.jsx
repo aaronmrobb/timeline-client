@@ -18,7 +18,6 @@ class Nav extends Component {
   }
   render() {
     const { user, menuCollapse } = this.props
-    console.log(menuCollapse)
     const loggedIn =   [<li><a href="/#/explore">Explore</a></li>,
         <li><a href="/#/account">Account</a></li>,
         <li><a href="/#/projects">Projects</a></li>]
