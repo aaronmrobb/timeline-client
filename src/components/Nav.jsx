@@ -18,32 +18,32 @@ class Nav extends Component {
   }
   render() {
     const { user, menuCollapse } = this.props
-    console.log(menuCollapse)
-    const links = user ? [  <li><a href="/#/explore">Explore</a></li>,
-      <li><a href="/#/account">Account</a></li>,
-      <li><a href="/#/projects">Projects</a></li>] : <li><a href="/#/explore">Explore</a></li>
+    const loggedIn =   [<li><a href="/#/explore">Explore</a></li>,
+        <li><a href="/#/account">Account</a></li>,
+        <li><a href="/#/projects">Projects</a></li>]
+    const notLoggedIn = <li><a href="/#/explore">Explore</a></li>
+    const links = user ? loggedIn : notLoggedIn
     return (
       <nav className="navbar navbar-inverse">
         <div className="container">
           <div className="navbar-header">
-
-                <button type="button" className="navbar-toggle" onClick={this.menuClick.bind(this)}>
-                  <span className="sr-only">Toggle navigation</span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                </button>
-                <a className="navbar-brand" href="#">Timelines</a>
-              </div>
-              <div className="navbar-collapse navbar-left collapse">
-                <ul className="nav navbar-nav">
-                  { links }
-                 </ul>
-              </div>
-              <Login loginState={this.props.loginForm}
-                     toggleLogin={this.props.toggleLogin}
-                     userLogin={this.props.userLogin}/>
+            <button type="button" className="navbar-toggle" onClick={this.menuClick.bind(this)}>
+              <span className="sr-only">Toggle navigation</span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+            </button>
+            <a className="navbar-brand" href="#">Timelines</a>
           </div>
+          <div className="navbar-collapse navbar-left collapse">
+            <ul className="nav navbar-nav">
+              { links }
+             </ul>
+          </div>
+          <Login loginState={this.props.loginForm}
+                 toggleLogin={this.props.toggleLogin}
+                 userLogin={this.props.userLogin}/>
+        </div>
       </nav>
     )
   }
