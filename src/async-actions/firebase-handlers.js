@@ -1,5 +1,5 @@
 function userLogin(state, action) {
-  return state
+
 }
 
 function userLogout() {

@@ -27,24 +27,23 @@ class Nav extends Component {
       <nav className="navbar navbar-inverse">
         <div className="container">
           <div className="navbar-header">
-
-                <button type="button" className="navbar-toggle" onClick={this.menuClick.bind(this)}>
-                  <span className="sr-only">Toggle navigation</span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                  <span className="icon-bar"></span>
-                </button>
-                <a className="navbar-brand" href="#">Timelines</a>
-              </div>
-              <div className="navbar-collapse navbar-left collapse">
-                <ul className="nav navbar-nav">
-                  { links }
-                 </ul>
-              </div>
-              <Login loginState={this.props.loginForm}
-                     toggleLogin={this.props.toggleLogin}
-                     userLogin={this.props.userLogin}/>
+            <button type="button" className="navbar-toggle" onClick={this.menuClick.bind(this)}>
+              <span className="sr-only">Toggle navigation</span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+            </button>
+            <a className="navbar-brand" href="#">Timelines</a>
           </div>
+          <div className="navbar-collapse navbar-left collapse">
+            <ul className="nav navbar-nav">
+              { links }
+             </ul>
+          </div>
+          <Login loginState={this.props.loginForm}
+                 toggleLogin={this.props.toggleLogin}
+                 userLogin={this.props.userLogin}/>
+        </div>
       </nav>
     )
   }
