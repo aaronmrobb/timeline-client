@@ -4,20 +4,21 @@ import { createStore, applyMiddleware } from 'redux'
 import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import reducer from './reducer.js'
+import thunk from 'redux-thunk';
 import { NavContainer } from './components/Nav'
 import { AccountContainer } from './components/Account'
 import { HomeContainer } from './components/Home'
 import { ProjectsContainer } from './components/Projects'
 import { SignupContainer } from './components/Signup'
 import { ExploreContainer } from './components/Explore'
-import firebaseMiddleware from './firebase-middleware'
+
 
 require('../styles/main.scss')
-const middlewaredStore = applyMiddleware(
-  firebaseMiddleware
-)(createStore)
 
-const store = middlewaredStore(reducer)
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk)
+)
 
 ReactDOM.render(
   <Provider store={store}>
