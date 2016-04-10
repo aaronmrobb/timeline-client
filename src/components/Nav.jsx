@@ -18,11 +18,6 @@ class Nav extends Component {
   }
   render() {
     const { user, menuCollapse } = this.props
-    const loggedIn =   [<li><a href="/#/explore">Explore</a></li>,
-        <li><a href="/#/account">Account</a></li>,
-        <li><a href="/#/projects">Projects</a></li>]
-    const notLoggedIn = <li><a href="/#/explore">Explore</a></li>
-    const links = user ? loggedIn : notLoggedIn
     return (
       <nav className="navbar navbar-inverse">
         <div className="container">
@@ -37,7 +32,13 @@ class Nav extends Component {
           </div>
           <div className="navbar-collapse navbar-left collapse">
             <ul className="nav navbar-nav">
-              { links }
+              {
+                user ?
+                [<li><a href="/#/explore">Explore</a></li>,
+                <li><a href="/#/account">Account</a></li>,
+                <li><a href="/#/projects">Projects</a></li>] :
+                <li><a href="/#/explore">Explore</a></li>
+              }
              </ul>
           </div>
           <Login loginState={this.props.loginState}

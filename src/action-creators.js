@@ -13,6 +13,13 @@ export function userLogin(username, password) {
   }
 }
 
+export function userLogout() {
+  return function (dispatch, getState) {
+    getState().get('ref').unauth()
+    dispatch(userLogoutSuccess())
+  }
+}
+
 function loginSuccess(userData) {
   return {
     type: 'USER_LOGIN',
@@ -26,7 +33,8 @@ function loginFailure() {
   }
 }
 
-export function userLogout() {
+
+function userLogoutSuccess() {
   return {
     type: 'USER_LOGOUT'
   }
