@@ -14,4 +14,11 @@
     width: 100%;
     display: block;
   }
+  .error {
+    display: none;
+    color: red;
+    &.active {
+      display: block;
+    }
+  }
 }

@@ -31,5 +31,6 @@ module.exports = {
   },
   sassLoader: {
      includePaths: [path.resolve(__dirname, "./styles")]
-   }
+   },
+   devtool: 'source-map'
 }
