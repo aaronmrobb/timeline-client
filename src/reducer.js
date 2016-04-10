@@ -15,12 +15,13 @@ const initialState = Map({
 })
 
 export default function(state = initialState, action) {
+  console.log(action.type)
   switch(action.type) {
     case 'USER_LOGIN':
       return state
     case 'USER_LOGOUT':
       return state
-    case 'FAILED_LOGIN':
+    case 'LOGIN_FAILURE':
       return state
     case 'CREATE_PROJECT':
       return state

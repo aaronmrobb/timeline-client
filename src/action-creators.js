@@ -1,10 +1,28 @@
 export function userLogin(username, password) {
+  return function (dispatch, getState) {
+    getState().get('ref').authWithPassword({
+      email: username,
+      password: password
+    }, (err, userData) => {
+      if (err) {
+        dispatch(loginFailure())
+      } else {
+        dispatch(loginSuccess(userData))
+      }
+    })
+  }
+}
+
+function loginSuccess(userData) {
   return {
     type: 'USER_LOGIN',
-    data: {
-      username: username,
-      password: password
-    }
+    user: userData
+  }
+}
+
+function loginFailure() {
+  return {
+    type: 'LOGIN_FAILURE'
   }
 }
 
