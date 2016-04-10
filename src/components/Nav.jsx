@@ -44,7 +44,7 @@ class Nav extends Component {
                  toggleLogin={this.props.toggleLogin}
                  userLogin={this.props.userLogin}
                  user={this.props.user}
-                 userLogout={this.props.userLogout}}/>
+                 userLogout={this.props.userLogout}/>
         </div>
       </nav>
     )
