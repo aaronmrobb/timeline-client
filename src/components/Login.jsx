@@ -15,11 +15,16 @@ export class Login extends Component {
   handleSubmit(e) {
     e.preventDefault()
     this.props.userLogin(this.refs.username.value, this.refs.password.value)
+    this.refs.username.value = ''
+    this.refs.password.value = ''
   }
   render() {
     const dropDownClasses = classnames('login', 'dropdown-menu', { open: this.props.loginState})
     return (
       <div className="nav nav-pills pull-right">
+        
+        <button className="btn btn-default navbar-btn" onClick={this.logout.bind(this)}>Logout</button>
+
         <button className="btn btn-default navbar-btn" onClick={this.handleClick.bind(this)}>Login</button>
         <div className={dropDownClasses}>
          <form className="form" id="formLogin" onSubmit={this.handleSubmit.bind(this)}>

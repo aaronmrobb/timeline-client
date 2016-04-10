@@ -42,7 +42,9 @@ class Nav extends Component {
           </div>
           <Login loginState={this.props.loginForm}
                  toggleLogin={this.props.toggleLogin}
-                 userLogin={this.props.userLogin}/>
+                 userLogin={this.props.userLogin}
+                 user={this.props.user}
+                 userLogout={this.props.userLogout}}/>
         </div>
       </nav>
     )

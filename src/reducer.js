@@ -1,6 +1,7 @@
 import Firebase from 'firebase'
 import { List, Map, fromJS, toJS } from 'immutable'
 import { toggleLogin, toggleMenu } from './reducers/navigation'
+import { userLogin } from './reducers/users'
 
 const firebaseRef = new Firebase('https://timelined.firebaseio.com/')
 
@@ -18,7 +19,7 @@ export default function(state = initialState, action) {
   console.log(action.type)
   switch(action.type) {
     case 'USER_LOGIN':
-      return state
+      return userLogin(state, action.user)
     case 'USER_LOGOUT':
       return state
     case 'LOGIN_FAILURE':
