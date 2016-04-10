@@ -9,10 +9,14 @@ const initialState = Map({
   ref: firebaseRef,
   auth: undefined,
   projects: undefined,
+  activeProject: undefined,
   navigation: Map({
     login: Map({
       active: false,
-      error: false
+      status: Map({
+        type: undefined,
+        message: undefined
+      })
     }),
     menuCollapse: true
   })
@@ -24,7 +28,7 @@ export default function(state = initialState, action) {
     case 'USER_LOGIN':
       return userLogin(state, action.user)
     case 'USER_LOGOUT':
-      return state
+      return userLogout(state)
     case 'LOGIN_FAILURE':
       return loginFailure(state)
     case 'CREATE_PROJECT':

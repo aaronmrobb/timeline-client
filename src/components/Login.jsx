@@ -10,7 +10,8 @@ export class Login extends Component {
     super(props)
   }
   handleClick(e) {
-    this.props.toggleLogin()
+    this.props.user ? this.props.userLogout() : this.props.toggleLogin()
+
   }
   handleSubmit(e) {
     e.preventDefault()
@@ -20,10 +21,12 @@ export class Login extends Component {
   }
   render() {
     const dropDownClasses = classnames('login', 'dropdown-menu', { open: this.props.loginState.get('active') })
-    const errorMessage = classnames('error', { active: this.props.loginState.get('error') })
+    const statusClass = this.props.loginState.getIn(['status', 'event']) ?
+    classnames(this.props.loginState.getIn(['status', 'event']), 'active', 'status') :
+    classnames('status', 'hidden')
     return (
       <div className="nav nav-pills pull-right">
-        <button className="btn btn-default navbar-btn" onClick={this.handleClick.bind(this)}>Login</button>
+        <button className="btn btn-default navbar-btn" onClick={this.handleClick.bind(this)}>{   this.props.user ? 'Logout' : 'Login'}</button>
         <div className={dropDownClasses}>
          <form className="form" id="formLogin" onSubmit={this.handleSubmit.bind(this)}>
            <div className="form-group">
@@ -35,8 +38,8 @@ export class Login extends Component {
            <div className="form-group">
              <button type="submit" id="btnLogin" className="btn btn-default">Login</button>
            </div>
-           <div className={errorMessage}>
-             Invalid combo son
+           <div className={statusClass}>
+             {this.props.loginState.getIn(['status', 'message'])}
            </div>
          </form>
         </div>
