@@ -40,7 +40,7 @@ class Nav extends Component {
               { links }
              </ul>
           </div>
-          <Login loginState={this.props.loginForm}
+          <Login loginState={this.props.loginState}
                  toggleLogin={this.props.toggleLogin}
                  userLogin={this.props.userLogin}
                  user={this.props.user}
@@ -57,7 +57,7 @@ function mapStateToProps(state) {
   return {
     user: state.get('user'),
     menuCollapse: state.getIn(['navigation', 'menuCollapse']),
-    loginForm: state.getIn(['navigation', 'loginForm'])
+    loginState: state.getIn(['navigation', 'login'])
   }
 }
 

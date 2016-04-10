@@ -1,5 +1,5 @@
 export function toggleLogin(state) {
-    return state.updateIn(['navigation', 'loginForm'], formState => !formState)
+    return state.updateIn(['navigation', 'login', 'active'], formState => !formState)
 }
 
 export function toggleMenu(state) {

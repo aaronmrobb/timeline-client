@@ -19,12 +19,10 @@ export class Login extends Component {
     this.refs.password.value = ''
   }
   render() {
-    const dropDownClasses = classnames('login', 'dropdown-menu', { open: this.props.loginState})
+    const dropDownClasses = classnames('login', 'dropdown-menu', { open: this.props.loginState.get('active') })
+    const errorMessage = classnames('error', { active: this.props.loginState.get('error') })
     return (
       <div className="nav nav-pills pull-right">
-        
-        <button className="btn btn-default navbar-btn" onClick={this.logout.bind(this)}>Logout</button>
-
         <button className="btn btn-default navbar-btn" onClick={this.handleClick.bind(this)}>Login</button>
         <div className={dropDownClasses}>
          <form className="form" id="formLogin" onSubmit={this.handleSubmit.bind(this)}>
@@ -36,6 +34,9 @@ export class Login extends Component {
            </div>
            <div className="form-group">
              <button type="submit" id="btnLogin" className="btn btn-default">Login</button>
+           </div>
+           <div className={errorMessage}>
+             Invalid combo son
            </div>
          </form>
         </div>
