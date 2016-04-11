@@ -3,7 +3,7 @@ import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
 import * as actionCreators from '../action-creators'
-import Project from './Project'
+import {Project }from './Project'
 
 //Projects
 
@@ -17,8 +17,8 @@ class Projects extends Component {
     this.refs.name.value = ''
   }
   render() {
-    const projects = this.props.projects ? this.props.projects.map(project => {
-      console.log(project.get('name'))
+    const projects = this.props.projects ? this.props.projects.map((project, idx)=> {
+      return <Project name={project.get('name')} key={idx} id={idx}/>
     }) : ''
     return (
       <div className="container">
@@ -43,7 +43,7 @@ class Projects extends Component {
 
           </div>
           <div className="col-md-9">
-
+            { projects }
           </div>
           <div className="col-md-3">
             Side Bar
