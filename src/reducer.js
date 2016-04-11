@@ -2,6 +2,7 @@ import Firebase from 'firebase'
 import { List, Map, fromJS, toJS } from 'immutable'
 import { toggleLogin, toggleMenu } from './reducers/navigation'
 import { userLogin, userLogout, loginFailure } from './reducers/users'
+import { setProjects } from './reducers/projects'
 
 const firebaseRef = new Firebase('https://timelined.firebaseio.com/')
 
@@ -31,8 +32,8 @@ export default function(state = initialState, action) {
       return userLogout(state)
     case 'LOGIN_FAILURE':
       return loginFailure(state)
-    case 'CREATE_PROJECT':
-      return state
+    case 'SET_PROJECTS':
+      return setProjects(state, action.projects)
     case 'UPDATE_PROJECT':
       return state
     case 'DELETE_PROEJCT':

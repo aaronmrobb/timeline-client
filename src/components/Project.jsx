@@ -11,7 +11,7 @@ export class Project extends Component {
   }
   render() {
     return (
-      <div>Project</div>
+      <div>this.props.name</div>
     )
   }
 }

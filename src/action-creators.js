@@ -1,3 +1,5 @@
+/* Async Actions */
+
 export function userLogin(username, password) {
   return function (dispatch, getState) {
     getState().get('ref').authWithPassword({
@@ -17,6 +19,40 @@ export function userLogout() {
   return function (dispatch, getState) {
     getState().get('ref').unauth()
     dispatch(userLogoutSuccess())
+  }
+}
+
+export function createProject(name) {
+  return function (dispatch, getState) {
+    const ref = getState().get('ref')
+    const user = getState().get('user')
+    const userRef = ref.child('users').child(user)
+    userRef.child('projects').push({
+      name: name
+    }, (err) => {
+      if (err === null) {
+        dispatch(loadProjects())
+      }
+    })
+  }
+}
+
+function loadProjects() {
+  return function (dispatch, getState) {
+    const ref = getState().get('ref')
+    const user = getState().get('user')
+    const userRef = ref.child('users').child(user).child('projects')
+    const projects = []
+    userRef.on('value', (data) => {
+      dispatch(setProjects(data.val()))
+    })
+  }
+}
+
+function setProjects(projects) {
+  return {
+    type: 'SET_PROJECTS',
+    projects: projects
   }
 }
 
@@ -40,11 +76,6 @@ function userLogoutSuccess() {
   }
 }
 
-export function createProject() {
-  return {
-    type: 'CREATE_PROJECT'
-  }
-}
 
 export function updateProject() {
   return {
