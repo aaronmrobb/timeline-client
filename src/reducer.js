@@ -2,14 +2,17 @@ import Firebase from 'firebase'
 import { List, Map, fromJS, toJS } from 'immutable'
 import { toggleLogin, toggleMenu } from './reducers/navigation'
 import { userLogin, userLogout, loginFailure } from './reducers/users'
-import { setProjects } from './reducers/projects'
+import { setProjects, toggleAddNewForm } from './reducers/projects'
 
 const firebaseRef = new Firebase('https://timelined.firebaseio.com/')
 
 const initialState = Map({
   ref: firebaseRef,
   auth: undefined,
-  projects: undefined,
+  projects: Map({
+    data: undefined,
+    formToggle: false
+  }),
   activeProject: undefined,
   navigation: Map({
     login: Map({
@@ -34,10 +37,8 @@ export default function(state = initialState, action) {
       return loginFailure(state)
     case 'SET_PROJECTS':
       return setProjects(state, action.projects)
-    case 'UPDATE_PROJECT':
-      return state
-    case 'DELETE_PROEJCT':
-      return state
+    case 'TOGGLE_PROJECT_FORM':
+      return toggleAddNewForm(state)
     case 'TOGGLE_LOGIN':
       return toggleLogin(state)
     case 'TOGGLE_MENU':

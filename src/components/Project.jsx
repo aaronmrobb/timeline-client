@@ -20,7 +20,7 @@ export class Project extends Component {
     return (
       <tr>
         <td>{this.props.name}</td>
-        <td>{this.props.id}</td>
+        <td>{this.props.description}</td>
         <td>
           <button className="btn btn-success" onClick={this.handleEdit.bind(this)}>
             View/Edit

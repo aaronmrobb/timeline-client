@@ -1,3 +1,10 @@
+@mixin transition($t) {
+  -webkit-transition: all $t ease;
+      -moz-transition: all $t ease;
+      -o-transition: all $t ease;
+      transition: all $t ease;
+}
+
 .navbar {
   border-radius: 0;
 }
@@ -20,5 +27,19 @@
     &.active {
       display: block;
     }
+  }
+}
+
+/* Projects Directory */
+.project-table {
+  margin-top: 50px;
+}
+.add-new {
+  @include transition(0.2s)
+  display: none;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+    display: block;
   }
 }
