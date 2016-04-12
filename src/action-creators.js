@@ -32,15 +32,17 @@ export function userLogout() {
   }
 }
 
-export function createProject(name) {
+export function createProject(name, description) {
   return function (dispatch, getState) {
     const ref = getState().get('ref')
     const user = getState().get('user')
     const userRef = ref.child('users').child(user)
     userRef.child('projects').push({
-      name: name
+      name: name,
+      description: description
     }, (err) => {
       if (err === null) {
+        dispatch(toggleAddNewForm())
         dispatch(loadProjects())
       }
     })
@@ -120,5 +122,11 @@ export function toggleLogin() {
 export function toggleMenu() {
   return {
     type: 'TOGGLE_MENU'
+  }
+}
+
+export function toggleAddNewForm() {
+  return {
+    type: 'TOGGLE_PROJECT_FORM'
   }
 }
