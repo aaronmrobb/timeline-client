@@ -18,7 +18,7 @@ class Projects extends Component {
   }
   render() {
     const projects = this.props.projects ? this.props.projects.map((project, idx)=> {
-      return <Project name={project.get('name')} key={idx} id={idx}/>
+      return <Project name={project.get('name')} key={idx} id={idx} deleteProject={this.props.deleteProject.bind(this)}/>
     }) : ''
     return (
       <div className="container">
