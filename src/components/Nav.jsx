@@ -12,6 +12,9 @@ class Nav extends Component {
   constructor(props) {
     super(props)
   }
+  componentWillMount() {
+    this.props.checkAuth()
+  }
   menuClick(e) {
    e.preventDefault()
    this.props.toggleMenu()
