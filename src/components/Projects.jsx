@@ -43,7 +43,11 @@ class Projects extends Component {
 
           </div>
           <div className="col-md-9">
-            { projects }
+            <table className="table table-bordered">
+              <tbody>
+                { projects }
+              </tbody>
+            </table>
           </div>
           <div className="col-md-3">
             Side Bar

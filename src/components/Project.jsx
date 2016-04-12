@@ -11,10 +11,10 @@ export class Project extends Component {
   }
   render() {
     return (
-      <div>
-        {this.props.name}
-        {this.props.id}
-      </div>
+      <tr>
+        <td>{this.props.name}</td>
+        <td>{this.props.id}</td>
+      </tr>
     )
   }
 }
