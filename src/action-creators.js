@@ -37,7 +37,7 @@ export function createProject(name) {
   }
 }
 
-function loadProjects() {
+export function loadProjects() {
   return function (dispatch, getState) {
     const ref = getState().get('ref')
     const user = getState().get('user')
