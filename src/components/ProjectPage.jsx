@@ -17,7 +17,6 @@ class ProjectPage extends Component {
     }
   }
   componentWillUpdate(props) {
-    console.log('happening')
     if (!this.props.user && props.user) {
       this.props.loadProjects()
     }
@@ -26,13 +25,22 @@ class ProjectPage extends Component {
     const { id } = this.props.params
     const activeProject = this.props.projects ? this.props.projects.filter((p, idx) => {
      return idx === id
-   }).first() : Map({
-     name: 'Loading'
-   })
+   }).first() : undefined
 
     return(
       <div className="container">
-        <h1>{activeProject.get('name')}</h1>
+        { activeProject ?
+        <div className="row">
+          <div className="col-md-12">
+            <h1>{activeProject.get('name')}</h1>
+          </div>
+        </div> :
+        <div className="row">
+          <div className="col-md-12">
+            <h1 className="loading">Loading</h1>
+          </div>
+        </div>
+      }
       </div>
     )
   }
