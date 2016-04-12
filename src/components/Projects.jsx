@@ -11,6 +11,16 @@ class Projects extends Component {
   constructor(props) {
     super(props)
   }
+  componentWillMount() {
+    if(this.props.user) {
+      this.props.loadProjects()
+    }
+  }
+  componentWillUpdate(props) {
+    if(!this.props.user && props.user) {
+      this.props.loadProjects()
+    }
+  }
   handleSumbit(e) {
     e.preventDefault()
     this.props.createProject(this.refs.name.value)
@@ -62,6 +72,7 @@ reactMixin(Projects.prototype, PureRenderMixin)
 
 function mapStateToProps(state) {
   return {
+    user: state.get('user'),
     projects: state.get('projects')
   }
 }
