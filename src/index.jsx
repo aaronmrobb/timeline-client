@@ -27,8 +27,8 @@ ReactDOM.render(
         <div className="main">
           <Router history={hashHistory}>
             <Route path="/" component={HomeContainer}/>
-            <Route path="/account" component={AccountContainer} />
-            <Route path="/projects">
+            <Route path="/account" component={AccountContainer} onEnter={requireAuth}/>
+            <Route path="/projects" onEnter={requireAuth}>
                 <IndexRoute component={ProjectsContainer}/>
                 <Route path=":id" component={ProjectPageContainer} />
             </Route>
@@ -40,3 +40,13 @@ ReactDOM.render(
   </Provider> ,
   document.getElementById('app')
 )
+
+
+function requireAuth(nextState, replace) {
+  if (!store.getState().get('user')) {
+    replace({
+      pathname: '/signup',
+      state: { nextPathname: nextState.location.pathname }
+    })
+  }
+}

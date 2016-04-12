@@ -1,4 +1,14 @@
 /* Async Actions */
+export function checkAuth(){
+  return function (dispatch, getState) {
+    const authData = getState().get('ref').getAuth()
+    if (authData) {
+      dispatch(loginSuccess(authData, false))
+    } else {
+
+    }
+  }
+}
 
 export function userLogin(username, password) {
   return function (dispatch, getState) {
@@ -9,7 +19,7 @@ export function userLogin(username, password) {
       if (err) {
         dispatch(loginFailure())
       } else {
-        dispatch(loginSuccess(userData))
+        dispatch(loginSuccess(userData, true))
       }
     })
   }
@@ -71,10 +81,11 @@ function setProjects(projects) {
   }
 }
 
-function loginSuccess(userData) {
+function loginSuccess(userData, dropDown) {
   return {
     type: 'USER_LOGIN',
-    user: userData
+    user: userData,
+    dropDown: dropDown
   }
 }
 

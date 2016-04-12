@@ -1,10 +1,10 @@
 import { toggleLogin } from './navigation'
 
-export function userLogin(state, userData) {
+export function userLogin(state, userData, dropDown) {
   const setUser = state.set('user', userData.uid)
   const clearError = setUser.setIn(['navigation', 'login', 'status', 'event'], undefined)
   const clearMessage = clearError.setIn(['navigation', 'login', 'status', 'message'], undefined)
-  return toggleLogin(clearMessage)
+  return dropDown ? toggleLogin(clearMessage) : clearMessage
 }
 
 export function userLogout(state) {
