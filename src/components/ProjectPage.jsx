@@ -11,13 +11,23 @@ class ProjectPage extends Component {
   constructor(props) {
     super(props)
   }
-
+  componentWillMount(){
+    if(this.props.user) {
+      this.props.loadProjects()
+    }
+  }
+  componentWillUpdate(props) {
+    console.log('happening')
+    if (!this.props.user && props.user) {
+      this.props.loadProjects()
+    }
+  }
   render(){
     const { id } = this.props.params
     const activeProject = this.props.projects ? this.props.projects.filter((p, idx) => {
      return idx === id
    }).first() : Map({
-     name: 'Error bitch'
+     name: 'Loading'
    })
 
     return(
@@ -32,6 +42,7 @@ reactMixin(ProjectPage.prototype, PureRenderMixin)
 
 function mapStateToProps(state) {
   return {
+    user: state.get('user'),
     projects: state.getIn(['projects', 'data'])
   }
 }
