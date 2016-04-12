@@ -30,7 +30,7 @@ ReactDOM.render(
             <Route path="/account" component={AccountContainer} onEnter={requireAuth}/>
             <Route path="/projects" onEnter={requireAuth}>
                 <IndexRoute component={ProjectsContainer}/>
-                <Route path=":id" component={ProjectPageContainer} />
+                <Route path=":id" component={ProjectPageContainer}  onEnter={requireAuth}/>
             </Route>
             <Route path="/signup" component={SignupContainer}/>
             <Route path="/explore" component={ExploreContainer}/>
