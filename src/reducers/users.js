@@ -9,7 +9,7 @@ export function userLogin(state, userData, dropDown) {
 
 export function userLogout(state) {
   const removeUser = state.set('user', undefined)
-  const removeProjects = removeUser.set('projects', undefined)
+  const removeProjects = removeUser.setIn(['projects', 'data'], undefined)
   return removeProjects
 }
 

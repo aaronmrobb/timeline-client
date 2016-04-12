@@ -91,6 +91,8 @@ function loginSuccess(userData, dropDown) {
   }
 }
 
+/* Sync Actions */
+
 function loginFailure() {
   return {
     type: 'LOGIN_FAILURE'

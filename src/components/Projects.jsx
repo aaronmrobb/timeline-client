@@ -34,7 +34,11 @@ class Projects extends Component {
   }
   render() {
     const projects = this.props.projects ? this.props.projects.map((project, idx)=> {
-      return <Project name={project.get('name')} description={project.get('description')} key={idx} id={idx} deleteProject={this.props.deleteProject.bind(this)}/>
+      return <Project name={project.get('name')}
+        description={project.get('description')}
+        key={idx} id={idx}
+        deleteProject={this.props.deleteProject.bind(this)}
+      />
     }) : ''
     const addNewFormClasses = classnames('add-new', { active: this.props.formToggle })
     const addNewButtonClasses = classnames('btn', 'btn-success', 'add-new', { active: !this.props.formToggle })
