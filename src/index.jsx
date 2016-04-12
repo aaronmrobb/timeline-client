@@ -11,7 +11,7 @@ import { HomeContainer } from './components/Home'
 import { ProjectsContainer } from './components/Projects'
 import { SignupContainer } from './components/Signup'
 import { ExploreContainer } from './components/Explore'
-
+import { ProjectPageContainer } from './components/ProjectPage'
 
 require('../styles/main.scss')
 
@@ -28,7 +28,10 @@ ReactDOM.render(
           <Router history={hashHistory}>
             <Route path="/" component={HomeContainer}/>
             <Route path="/account" component={AccountContainer} />
-            <Route path="/projects" component={ProjectsContainer} />
+            <Route path="/projects">
+                <IndexRoute component={ProjectsContainer}/>
+                <Route path=":id" component={ProjectPageContainer} />
+            </Route>
             <Route path="/signup" component={SignupContainer}/>
             <Route path="/explore" component={ExploreContainer}/>
           </Router>

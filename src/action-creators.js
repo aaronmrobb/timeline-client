@@ -49,6 +49,21 @@ function loadProjects() {
   }
 }
 
+export function deleteProject(projectId) {
+  return function (dispatch, getState) {
+    const ref = getState().get('ref')
+    const user = getState().get('user')
+    const projectRef = ref.child('users').child(user).child('projects').child(projectId)
+    projectRef.remove((err) => {
+      if (err) {
+        console.log('Cannot delete shit capn')
+      } else {
+        loadProjects()
+      }
+    })
+  }
+}
+
 function setProjects(projects) {
   return {
     type: 'SET_PROJECTS',
@@ -83,11 +98,7 @@ export function updateProject() {
   }
 }
 
-export function deleteProject() {
-  return {
-    type: 'DELETE_PROJECT'
-  }
-}
+
 
 export function toggleLogin() {
   return {
