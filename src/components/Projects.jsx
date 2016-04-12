@@ -58,11 +58,11 @@ class Projects extends Component {
                 <div className="col-md-12">
                   <h3>New Project</h3>
                   <div className="form-group">
-                    <label for="name">Name:</label>
+                    <label htmlFor="name">Name:</label>
                     <input className="form-control" name="name" ref="name" id="name" type="text"/>
                   </div>
                   <div className="form-group">
-                    <label for="description">Description:</label>
+                    <label htmlFor="description">Description:</label>
                     <textarea className="form-control" name="description" ref="description" type="text" />
                   </div>
                   <div className="form-group">
