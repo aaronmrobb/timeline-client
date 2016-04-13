@@ -23,7 +23,7 @@ export class ProjectDetails extends Component {
   }
   render() {
     const { name, description, events } = this.props
-    const eventList = events.map((e, idx) => {
+    const eventList = events ? events.map((e, idx) => {
       return <Event projectId={this.props.id}
                     name={e.get('name')}
                     date={e.get('date')}
@@ -32,7 +32,7 @@ export class ProjectDetails extends Component {
                     id={idx}
                     deleteEvent={this.props.deleteEvent}
               />
-    })
+          }) : ''
     return (
       <div className="container">
         <div className="row">
