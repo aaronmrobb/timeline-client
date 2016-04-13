@@ -4,6 +4,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
 import * as actionCreators from '../action-creators'
 import { Map } from 'immutable'
+import { ProjectDetails } from './ProjectDetails'
 
 //ProjectPage
 
@@ -30,11 +31,10 @@ class ProjectPage extends Component {
     return(
       <div className="container">
         { activeProject ?
-        <div className="row">
-          <div className="col-md-12">
-            <h1>{activeProject.get('name')}</h1>
-          </div>
-        </div> :
+          <ProjectDetails name={activeProject.get('name')}
+                          description={activeProject.get('description')}
+                          events={activeProject.get('events')}/> 
+        :
         <div className="row">
           <div className="col-md-12">
             <h1 className="loading">Loading</h1>

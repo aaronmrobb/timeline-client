@@ -68,9 +68,7 @@ class Projects extends Component {
                   <div className="form-group">
                     <button className="btn btn-success" type="submit">Create</button>
                   </div>
-
-              </div>
-
+                </div>
               </form>
             </div>
 

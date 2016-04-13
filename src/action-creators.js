@@ -39,7 +39,12 @@ export function createProject(name, description) {
     const userRef = ref.child('users').child(user)
     userRef.child('projects').push({
       name: name,
-      description: description
+      description: description,
+      events: {
+        name: 'Default',
+        time: 'Default',
+        location: 'Default'
+      }
     }, (err) => {
       if (err === null) {
         dispatch(toggleAddNewForm())
