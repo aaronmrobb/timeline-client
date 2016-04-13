@@ -31,9 +31,11 @@ class ProjectPage extends Component {
     return(
       <div className="container">
         { activeProject ?
-          <ProjectDetails name={activeProject.get('name')}
+          <ProjectDetails id={id}
+                          name={activeProject.get('name')}
                           description={activeProject.get('description')}
-                          events={activeProject.get('events')}/> 
+                          events={activeProject.get('events')}
+                          createEvent={this.props.createEvent}/>
         :
         <div className="row">
           <div className="col-md-12">

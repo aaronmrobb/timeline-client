@@ -81,6 +81,24 @@ export function deleteProject(projectId) {
   }
 }
 
+export function createEvent(projectId, eventData) {
+  return function (dispatch, getState) {
+    console.log(eventData)
+    const ref = getState().get('ref')
+    const user = getState().get('user')
+    const projectRef = ref.child('users/'+ user + '/projects/' + projectId + '/events')
+    projectRef.push(eventData,
+      (err) => {
+      if (err === null) {
+        dispatch(loadProjects())
+      } else {
+        console.log('Problems bro')
+      }
+    }
+  )
+}
+}
+
 function setProjects(projects) {
   return {
     type: 'SET_PROJECTS',

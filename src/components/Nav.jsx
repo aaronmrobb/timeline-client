@@ -37,10 +37,10 @@ class Nav extends Component {
             <ul className="nav navbar-nav">
               {
                 user ?
-                [<li><a href="/#/explore">Explore</a></li>,
-                <li><a href="/#/account">Account</a></li>,
-                <li><a href="/#/projects">Projects</a></li>] :
-                <li><a href="/#/explore">Explore</a></li>
+                [<li key={1}><a href="/#/explore">Explore</a></li>,
+                <li key={2}><a href="/#/account">Account</a></li>,
+                <li key={3}><a href="/#/projects">Projects</a></li>] :
+                <li key={4}><a href="/#/explore">Explore</a></li>
               }
              </ul>
           </div>
