@@ -40,11 +40,11 @@ export function createProject(name, description) {
     userRef.child('projects').push({
       name: name,
       description: description,
-      events: {
+      events: [{
         name: 'Default',
         time: 'Default',
         location: 'Default'
-      }
+      }]
     }, (err) => {
       if (err === null) {
         dispatch(toggleAddNewForm())
