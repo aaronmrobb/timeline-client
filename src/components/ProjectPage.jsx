@@ -35,7 +35,8 @@ class ProjectPage extends Component {
                           name={activeProject.get('name')}
                           description={activeProject.get('description')}
                           events={activeProject.get('events')}
-                          createEvent={this.props.createEvent}/>
+                          createEvent={this.props.createEvent}
+                          deleteEvent={this.props.deleteEvent}/>
         :
         <div className="row">
           <div className="col-md-12">

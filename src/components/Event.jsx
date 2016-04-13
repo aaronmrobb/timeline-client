@@ -9,6 +9,13 @@ export class Event extends Component {
   constructor(props) {
     super(props)
   }
+  handleEdit(e) {
+    e.preventDefault()
+  }
+  handleDelete(e) {
+    e.preventDefault()
+    this.props.deleteEvent(this.props.projectId, this.props.id)
+  }
   render() {
 
     return (
@@ -16,7 +23,10 @@ export class Event extends Component {
         <td>{this.props.name}</td>
         <td>{this.props.description}</td>
         <td>{this.props.date}</td>
-        <td><button className="btn btn-warning">Edit</button></td>
+        <td>
+          <button onClick={this.handleEdit.bind(this)} className="btn btn-warning">Edit</button>
+          <button onClick={this.handleDelete.bind(this)} className="btn btn-danger">Delete</button>
+        </td>
       </tr>
     )
   }

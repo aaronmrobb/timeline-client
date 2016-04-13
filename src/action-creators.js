@@ -83,22 +83,35 @@ export function deleteProject(projectId) {
 
 export function createEvent(projectId, eventData) {
   return function (dispatch, getState) {
-    console.log(eventData)
     const ref = getState().get('ref')
     const user = getState().get('user')
     const projectRef = ref.child('users/'+ user + '/projects/' + projectId + '/events')
     projectRef.push(eventData,
       (err) => {
-      if (err === null) {
-        dispatch(loadProjects())
-      } else {
-        console.log('Problems bro')
+        if (err === null) {
+          dispatch(loadProjects())
+        } else {
+          console.log('Problems bro')
+        }
       }
-    }
-  )
-}
+    )
+  }
 }
 
+export function deleteEvent(projectId, eventId) {
+  return function (dispatch, getState) {
+    const ref = getState().get('ref')
+    const user = getState().get('user')
+    const eventRef = ref.child('users/'+ user + '/projects/' + projectId + '/events/' + eventId)
+    eventRef.remove((err) => {
+      if (err) {
+        console.log('Cannot delete shit capn')
+      } else {
+        loadProjects()
+      }
+    })
+  }
+}
 function setProjects(projects) {
   return {
     type: 'SET_PROJECTS',

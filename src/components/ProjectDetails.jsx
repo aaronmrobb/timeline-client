@@ -24,7 +24,14 @@ export class ProjectDetails extends Component {
   render() {
     const { name, description, events } = this.props
     const eventList = events.map((e, idx) => {
-      return <Event name={e.get('name')} date={e.get('date')} description={e.get('description')} key={idx} id={idx} />
+      return <Event projectId={this.props.id}
+                    name={e.get('name')}
+                    date={e.get('date')}
+                    description={e.get('description')}
+                    key={idx}
+                    id={idx}
+                    deleteEvent={this.props.deleteEvent}
+              />
     })
     return (
       <div className="container">
