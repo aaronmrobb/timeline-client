@@ -27,7 +27,7 @@ export class ProjectDetails extends Component {
       return <Event projectId={this.props.id}
                     name={e.get('name')}
                     date={e.get('date')}
-                    description={e.get('description')}
+                    description={e.get('description')}  
                     key={idx}
                     id={idx}
                     deleteEvent={this.props.deleteEvent}
