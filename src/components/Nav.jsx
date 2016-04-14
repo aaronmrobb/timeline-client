@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
-import * as actionCreators from '../action-creators/projects'
+import * as actionCreators from '../action-creators/login'
 import { Login } from './Login.jsx'
 import classnames from 'classnames'
 
@@ -40,7 +40,8 @@ class Nav extends Component {
                 [<li key={1}><a href="/#/explore">Explore</a></li>,
                 <li key={2}><a href="/#/account">Account</a></li>,
                 <li key={3}><a href="/#/projects">Projects</a></li>] :
-                <li key={4}><a href="/#/explore">Explore</a></li>
+                [<li key={1}><a href="/#/explore">Explore</a></li>,
+                <li key={2}><a href="/#/signup">Sign Up</a></li>]
               }
              </ul>
           </div>
