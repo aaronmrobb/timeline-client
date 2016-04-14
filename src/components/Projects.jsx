@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { connect } from 'react-redux'
-import * as actionCreators from '../action-creators'
+import * as actionCreators from '../action-creators/projects'
 import {Project }from './Project'
 import classnames from 'classnames'
 
