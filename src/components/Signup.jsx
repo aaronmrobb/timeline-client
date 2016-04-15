@@ -12,7 +12,7 @@ export class Signup extends Component {
   }
   handleCreateUser(e) {
     e.preventDefault()
-    this.props.createUser()
+    this.props.createUser(this.refs.email.value, this.refs.password.value)
   }
   render() {
     return (
