@@ -78,6 +78,7 @@ export function deleteEvent(projectId, eventId) {
     })
   }
 }
+
 function setProjects(projects) {
   return {
     type: 'SET_PROJECTS',
