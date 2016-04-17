@@ -20,7 +20,7 @@ export class Login extends Component {
     this.refs.password.value = ''
   }
   render() {
-    const dropDownClasses = classnames('login', 'dropdown-menu', { open: this.props.loginState.get('active') })
+    const dropDownClasses = classnames('login', 'dropdown-menu', { open: this.props.loginState.get('active') && !this.props.user })
     const statusClass = this.props.loginState.getIn(['status', 'event']) ?
     classnames(this.props.loginState.getIn(['status', 'event']), 'active', 'status') :
     classnames('status', 'hidden')
