@@ -13,7 +13,11 @@ class Home extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Some landing page bullshit</h1>
+        <div className="row">
+          <div className="col-md-12">
+            <h1>Landing Page Thing</h1>
+          </div>
+        </div>
       </div>
     )
   }
