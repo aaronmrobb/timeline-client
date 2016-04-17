@@ -27,7 +27,6 @@ const initialState = Map({
 })
 
 export default function(state = initialState, action) {
-  console.log(action.type)
   switch(action.type) {
     case 'USER_LOGIN':
       return userLogin(state, action.user, action.dropDown)
