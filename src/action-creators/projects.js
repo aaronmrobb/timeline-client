@@ -71,11 +71,19 @@ export function deleteEvent(projectId, eventId) {
     const eventRef = ref.child('users/'+ user + '/projects/' + projectId + '/events/' + eventId)
     eventRef.remove((err) => {
       if (err) {
-        console.log('Cannot delete shit capn')
+        console.log('Error loading projects')
       } else {
         loadProjects()
       }
     })
+  }
+}
+
+export function updateEvent(projectId, eventId, eventData) {
+  return function (dispatch, getState) {
+    const ref = getState().get('ref')
+    const user = getState().get('user')
+    const eventRef = ref.child('users/'+ user + '/projects/' + projectId + '/events/' + eventId)
   }
 }
 
@@ -95,5 +103,11 @@ export function updateProject() {
 export function toggleAddNewForm() {
   return {
     type: 'TOGGLE_PROJECT_FORM'
+  }
+}
+
+export function toggleToggleEventEdit() {
+  return {
+    type: 'TOGGLE_EVENT_EDIT'
   }
 }
