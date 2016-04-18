@@ -4,7 +4,7 @@ export function checkAuth(){
     if (authData) {
       dispatch(loginSuccess(authData, false))
     } else {
-
+      
     }
   }
 }
