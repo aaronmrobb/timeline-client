@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import reactMixin from 'react-mixin'
 import PureRenderMixin from 'react-addons-pure-render-mixin'
 import { Event } from './Event'
-
 //Landing Page Junk Stuff
 
 export class ProjectDetails extends Component {
@@ -21,13 +20,16 @@ export class ProjectDetails extends Component {
     this.refs.date.value = ''
     this.refs.description.value = ''
   }
+  testForm(stuff){
+    console.log(stuff)
+  }
   render() {
     const { name, description, events } = this.props
     const eventList = events ? events.map((e, idx) => {
       return <Event projectId={this.props.id}
                     name={e.get('name')}
                     date={e.get('date')}
-                    description={e.get('description')}  
+                    description={e.get('description')}
                     key={idx}
                     id={idx}
                     deleteEvent={this.props.deleteEvent}

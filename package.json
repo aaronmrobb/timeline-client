@@ -52,6 +52,7 @@
     "random-words": "0.0.1",
     "react": "^0.14.8",
     "react-addons-pure-render-mixin": "^0.14.7",
+    "react-automatic-form": "^1.0.2",
     "react-dom": "^0.14.8",
     "react-mixin": "^2.0.2",
     "react-redux": "^4.4.0",
