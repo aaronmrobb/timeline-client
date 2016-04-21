@@ -20,9 +20,7 @@ export class ProjectDetails extends Component {
     this.refs.date.value = ''
     this.refs.description.value = ''
   }
-  testForm(stuff){
-    console.log(stuff)
-  }
+
   render() {
     const { name, description, events } = this.props
     const eventList = events ? events.map((e, idx) => {
@@ -43,11 +41,9 @@ export class ProjectDetails extends Component {
             <p>{description}</p>
           </div>
         </div>
-
         <div className="row">
           <div className="col-md-8">
             <table className="table table-bordered">
-
                 <thead>
                   <tr>
                     <th>Name</th>
@@ -58,7 +54,6 @@ export class ProjectDetails extends Component {
                 </thead>
                 <tbody>
                   { eventList }
-
                 </tbody>
             </table>
           </div>
