@@ -5,7 +5,7 @@ import { Map } from 'immutable'
 
 chai.use(chaiEnzyme())
 
-describe('Nav', () => {
+describe('ProjectDetails', () => {
   xit('renders a pure component', () => {
 
   })
